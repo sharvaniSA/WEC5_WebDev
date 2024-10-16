@@ -9,11 +9,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #3B5323; 
+            color: white; 
         }
 
         h1, h2, h3 {
             cursor: pointer;
-            background-color: #f4f4f4;
+            background-color: white; 
+            color: #3B5323; 
             padding: 10px;
             margin: 0;
             border-bottom: 1px solid #ddd;
@@ -21,11 +24,14 @@
 
         section {
             margin: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: #3B5323;
         }
 
         .content {
             padding: 10px;
-            border: 1px solid #ddd;
             border-top: none;
         }
 
@@ -37,10 +43,11 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #f9f9f9;
+            background-color: white; 
             border: 1px solid #ddd;
             padding: 10px;
             width: 500px;
+            color: #3B5323; 
         }
 
         .toc h2 {
@@ -49,11 +56,12 @@
 
         .toc a {
             text-decoration: none;
-            color: #333;
+            color: #3B5323; 
         }
 
         .toc a:hover {
             text-decoration: underline;
+            color: #2E4720; 
         }
 
         .toc ul {
@@ -69,9 +77,18 @@
             margin-top: 5px;
             margin-left: 15px;
         }
+
+        a {
+            color: #3B5323; 
+        }
+
+        a:hover {
+            color: #2E4720;
+        }
     </style>
 </head>
 <body>
+
 
     <div class="toc">
         <h2>Table of Contents</h2>
@@ -96,16 +113,20 @@
     <section>
         <h1 id="projects">Personal Projects</h1>
         <div class="content collapsed">
-            <h2 id="project1">Futoshiki Game </h2>
-            <p>Constructed a robust game logic for the Futoshiki puzzle using Python and OOP principles. Implemented constraint satisfaction algorithms, improving code readability by 40%.</p>
+            <h2 id="project1">Futoshiki Game (July 2023)</h2>
+            <h3 id="project1-details">Details</h3>
+            <p>Constructed a robust game logic for the Futoshiki puzzle using Python and OOP principles. </p>
 
-            <h2 id="project2">Artphoria </h2>
-            <p>Developed a full-stack e-commerce web application connecting art enthusiasts using HTML, CSS, JavaScript, PHP, and MySQL. Provided access to 100+ art tutorials and a personalized notes feature.</p>
+            <h2 id="project2">Artphoria (August 2023)</h2>
+            <h3 id="project2-details">Details</h3>
+            <p>Developed a full-stack e-commerce web application connecting art enthusiasts using HTML, CSS, JavaScript, PHP, and MySQL. </p>
 
-            <h2 id="project3">Tournament Manager </h2>
-            <p>Engineered a Java program using Doubly Linked Lists for match simulation between teams. Implemented features like real-time score updates, random match generation, and live standings tracking.</p>
+            <h2 id="project3">Tournament Manager (December 2023)</h2>
+            <h3 id="project3-details">Details</h3>
+            <p>Engineered a Java program using Doubly Linked Lists for match simulation between teams. </p>
 
-            <h2 id="project4">Paper Presentation: Machine Learning Techniques in Computer Vision </h2>
+            <h2 id="project4">Paper Presentation: Machine Learning Techniques in Computer Vision (August 2024)</h2>
+            <h3 id="project4-details">Details</h3>
             <p>Presented research on machine learning techniques applied to computer vision problems.</p>
         </div>
     </section>
@@ -114,15 +135,19 @@
         <h1 id="skills">Technical Skills and Interests</h1>
         <div class="content collapsed">
             <h2 id="skills1">Technical Skills</h2>
+            <h3 id="skills1-details">Languages & Frameworks</h3>
             <p>C/C++, Python, HTML, CSS, JavaScript, React, Java (Basic)</p>
 
             <h2 id="skills2">Tools</h2>
+            <h3 id="skills2-details">Version Control & Operating Systems</h3>
             <p>Git, GitHub, Linux</p>
 
             <h2 id="skills3">Academic Coursework</h2>
+            <h3 id="skills3-details">Major Subjects</h3>
             <p>DSA, DBMS, Operating Systems, OOPs, Machine Learning</p>
 
             <h2 id="skills4">Soft Skills</h2>
+            <h3 id="skills4-details">Core Soft Skills</h3>
             <p>Leadership, Teamwork, Consistency</p>
         </div>
     </section>
@@ -142,19 +167,19 @@
     </section>
 
     <script>
-        document.querySelectorAll('h1, h2').forEach((heading) => {
+        document.querySelectorAll('h1, h2, h3').forEach((heading) => {
             heading.addEventListener('click', function () {
                 const content = this.nextElementSibling;
-                if (content.classList.contains('collapsed')) {
+                if (content && content.classList.contains('collapsed')) {
                     content.classList.remove('collapsed');
-                } else {
+                } else if (content) {
                     content.classList.add('collapsed');
                 }
             });
         });
 
         const tocList = document.getElementById('toc-list');
-        const headings = document.querySelectorAll('h1, h2');
+        const headings = document.querySelectorAll('h1, h2, h3');
 
         headings.forEach((heading, index) => {
             const listItem = document.createElement('li');
